@@ -1,0 +1,44 @@
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+    "username":"thanh1004",
+    "password":"1234"
+}
+
+###
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "username":"thanh1004",
+    "password":"1234"
+}
+
+###
+
+POST http://localhost:5000/api/post
+Content-Type: application/json
+Authorization: thanhdq eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MTU4MjIwODYyZTNlOTJlY2M5OWQ2YzMiLCJpYXQiOjE2MzMxNjcxOTZ9.s1pXTrSIC_2TGp6i3Co3C1qXCxv-rXM5PJyOM4nFsAw
+
+{
+    "title":"bcv",
+}
+
+###
+PUT http://localhost:5000/api/post/61582941f2f9c257fe47ef55
+Content-Type: application/json
+Authorization: thanhdq eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MTU4MjIwODYyZTNlOTJlY2M5OWQ2YzMiLCJpYXQiOjE2MzMxNjcxOTZ9.s1pXTrSIC_2TGp6i3Co3C1qXCxv-rXM5PJyOM4nFsAw
+
+{
+    "title":"di hoc",
+    "dueDate":"20/10/2021",
+    "status":"DONE",
+    "endable":false
+}
+
+###
+
+DELETE  http://localhost:5000/api/post/61582941f2f9c257fe47ef55
+Content-Type: application/json
+Authorization: thanhdq eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MTU4MjIwODYyZTNlOTJlY2M5OWQ2YzMiLCJpYXQiOjE2MzMxNjcxOTZ9.s1pXTrSIC_2TGp6i3Co3C1qXCxv-rXM5PJyOM4nFsAw
