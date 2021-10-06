@@ -40,8 +40,7 @@ module.exports.createPost = async (req, res) => {
     const newPost = new Post({
       title,
       dueDate,
-      enable: true,
-      status: "INPROCESS",
+      enable: false,
       user: req.userID,
     });
 

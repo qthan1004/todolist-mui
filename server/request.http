@@ -22,7 +22,8 @@ Content-Type: application/json
 Authorization: thanhdq eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MTU4MjIwODYyZTNlOTJlY2M5OWQ2YzMiLCJpYXQiOjE2MzMxNjcxOTZ9.s1pXTrSIC_2TGp6i3Co3C1qXCxv-rXM5PJyOM4nFsAw
 
 {
-    "title":"bcv",
+    "title":"di hoc",
+    "dueDate":"10/10/2021"
 }
 
 ###
