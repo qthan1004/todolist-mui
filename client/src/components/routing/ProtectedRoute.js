@@ -1,6 +1,7 @@
 import { Route, Redirect } from "react-router";
 import { useContext } from "react";
 import { AuthContext } from "../contexts/AuthContext";
+import Navbar from "../layout/Navbar";
 
 const ProctectedRoute = ({ component: Component, ...rest }) => {
   const {
@@ -13,6 +14,7 @@ const ProctectedRoute = ({ component: Component, ...rest }) => {
       render={(props) =>
         isAuthenticated ? (
           <>
+            <Navbar />
             <Component {...rest} {...props} />
           </>
         ) : (
