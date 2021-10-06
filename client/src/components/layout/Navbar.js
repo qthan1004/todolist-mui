@@ -29,7 +29,7 @@ function Navbar() {
             sx={{ width: "10%", display: "flex" }}
           >
             <img src={TodoLogo} alt="todologo" width="32" height="32" />
-            <Typography variant="h5" component="div" ml={1}>
+            <Typography variant="h5" component="span" ml={1}>
               Todo
             </Typography>
           </Typography>

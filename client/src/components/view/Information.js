@@ -26,7 +26,6 @@ function Information() {
     setInfo(response.data.results);
   }, [itemsLenght]);
 
-  console.log(info);
   return (
     <div>
       <InfiniteScroll

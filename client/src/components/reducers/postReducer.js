@@ -1,4 +1,8 @@
-import { POSTS_LOADED_FAIL, POSTS_LOADED_SUCCESS } from "../contexts/constain";
+import {
+  POSTS_LOADED_FAIL,
+  POSTS_LOADED_SUCCESS,
+  ADD_POST,
+} from "../contexts/constain";
 export const postReducer = (state, action) => {
   const { type, payload } = action;
 
@@ -15,6 +19,12 @@ export const postReducer = (state, action) => {
         ...state,
         posts: [],
         postLoading: false,
+      };
+
+    case ADD_POST:
+      return {
+        ...state,
+        posts: [...state.posts, payload],
       };
 
     default:

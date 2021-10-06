@@ -2,22 +2,25 @@ import React, { useContext, useEffect, useState } from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import { PostContext } from "../contexts/PostContext";
 import moment from "moment";
+import { Button } from "@material-ui/core";
+import addIcon from "../../assets/plus-circle-fill.svg";
+import AddPostModal from "../posts/AddPostModal";
 
 const Dashboard = () => {
   const {
     postState: { posts },
     getPost,
+    setShowAddPost,
   } = useContext(PostContext);
 
   useEffect(() => getPost(), []);
 
-  const rows = posts.map((post) => {
+  const rows = posts.map((post, index) => {
     return {
-      id: post._id,
+      id: index,
       col1: post.title,
       col2: moment(post.creatAt).format("DD-MM-YYYY"),
       col3: moment(post.dueDate).format("DD-MM-YYYY"),
-      col4: post.status,
       col5: post.enable,
     };
   });
@@ -32,34 +35,28 @@ const Dashboard = () => {
       width: 150,
       editable: true,
     },
-    {
-      field: "col4",
-      headerName: "Status",
-      width: 150,
-      editable: true,
-    },
+
     {
       field: "col5",
-      headerName: "Active",
+      headerName: "Is Complete",
       type: "boolean",
-      width: 150,
+      width: 200,
       editable: true,
     },
   ];
 
-  const [select, setSelection] = useState([]);
-
   return (
     <>
+      <AddPostModal />
       <div style={{ height: "94vh", width: "100%" }}>
-        <DataGrid
-          rows={rows}
-          columns={columns}
-          onRowSelected={(newSelection) => {
-            setSelection(...newSelection);
-          }}
-        />
+        <DataGrid rows={rows} columns={columns} />;
       </div>
+      <Button
+        className="btn-floating"
+        onClick={setShowAddPost.bind(this, true)}
+      >
+        <img src={addIcon} alt="addIcon" width="60" height="60" />
+      </Button>
     </>
   );
 };
